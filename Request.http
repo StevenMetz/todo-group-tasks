@@ -9,13 +9,13 @@ Content-Type: application/json
 {
   "first_name":"Steven",
   "last_name": "Metz",
-  "email": "steven@test.com",
+  "email": "steven1@test.com",
   "password":"password",
   "password_confirmation": "password",
   "image": "/lib/images"
 }
 ### UPDATE
-PATCH http://localhost:3000/employees/1 
+PATCH http://localhost:3000/employees/2
 Content-Type: application/json 
 
 {
@@ -27,3 +27,12 @@ Content-Type: application/json
 
 ### DESTROY
 DELETE http://localhost:3000/employees/1 
+
+### LOGIN
+POST http://localhost:3000/sessions.json 
+Content-Type: application/json
+
+{
+  "email": "steven@test.com",
+  "password": "password"
+}

@@ -55,7 +55,7 @@ RSpec.describe "Employees", type: :request do
       Employee.create!(
         first_name: "steven",
         last_name: "metz",
-        email: "test2@email.com",
+        email: "test@email.com",
         password: "password",
         password_confirmation: "password",
         image: "image.com",

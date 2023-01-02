@@ -22,7 +22,7 @@ class EmployeesController < ApplicationController
     if employee.save
       render json: employee.as_json
     else
-      render json: { errors: employee.errors.full_message }, status: 418
+      render json: { errors: employee.errors.full_messages }, status: :bad_request
     end
   end
 

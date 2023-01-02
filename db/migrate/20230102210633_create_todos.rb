@@ -3,7 +3,7 @@ class CreateTodos < ActiveRecord::Migration[7.0]
     create_table :todos do |t|
       t.string :name
       t.text :description
-      t.integer :user_id
+      t.integer :employee_id
 
       t.timestamps
     end
