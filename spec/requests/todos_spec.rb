@@ -1,24 +1,31 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Todos", type: :request do
+  before(:all) do
+    @todo = Todo.create!(name: "build stuff", description: "get it done faster", employee_id: nil, done: false)
+  end
   describe "GET /index" do
     it "returns http success" do
-      get "/todos/index"
+      get "/todos"
       expect(response).to have_http_status(:success)
+      expect(@todo).to be_valid
     end
   end
 
   describe "GET /show" do
     it "returns http success" do
-      get "/todos/show"
+      id = @todo.id
+      get "/todos/#{id}"
       expect(response).to have_http_status(:success)
+      expect(@todo.name).to eq("build stuff")
     end
   end
 
   describe "GET /create" do
-    it "returns http success" do
-      get "/todos/create"
+    it "checks a todo is created" do
+      post "/todos"
       expect(response).to have_http_status(:success)
+      expect(@todo).to be_valid
     end
   end
 
@@ -35,5 +42,4 @@ RSpec.describe "Todos", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
 end

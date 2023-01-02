@@ -9,7 +9,7 @@ Content-Type: application/json
 {
   "first_name":"Steven",
   "last_name": "Metz",
-  "email": "steven1@test.com",
+  "email": "steven12@test.com",
   "password":"password",
   "password_confirmation": "password",
   "image": "/lib/images"
@@ -36,3 +36,4 @@ Content-Type: application/json
   "email": "steven@test.com",
   "password": "password"
 }
+
