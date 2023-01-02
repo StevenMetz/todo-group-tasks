@@ -7,10 +7,10 @@ POST http://localhost:3000/employees
 Content-Type: application/json 
 
 {
-  "name":"Steven",
-  "name":
-  "name":
-  "name":
-  "name":
-  "name":
+  "first_name":"Steven",
+  "last_name": "Metz",
+  "email": "steven@test.com",
+  "password":"password",
+  "password_confirmation": "password",
+  "image": "/lib/images"
 }
