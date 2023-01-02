@@ -22,7 +22,7 @@ class EmployeesController < ApplicationController
     if employee.save
       render json: employee.as_json
     else
-      render json: { errors: employee.erros.full_message }
+      render json: { errors: employee.errors.full_message }, status: 418
     end
   end
 
