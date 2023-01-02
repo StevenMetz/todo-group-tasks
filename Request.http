@@ -1,0 +1,16 @@
+### INDEX
+GET http://localhost:3000/employees
+### SHOW
+GET http://localhost:3000/employees/1
+### CREATE
+POST http://localhost:3000/employees 
+Content-Type: application/json 
+
+{
+  "name":"Steven",
+  "name":
+  "name":
+  "name":
+  "name":
+  "name":
+}
