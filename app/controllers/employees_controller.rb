@@ -27,8 +27,24 @@ class EmployeesController < ApplicationController
   end
 
   def update
+    employee = Employee.find_by(id: params[:id])
+    employee.first_name = params[:first_name] || employee.first_name
+    employee.last_name = params[:last_name] || employee.last_name
+    employee.email = params[:email] || employee.email
+    employee.image = params[:image] || employee.image
+    if employee.save
+      render json: employee.as_json
+    else
+      render json: { errors: employee.errors.full_message }, status: :bad_request
+    end
   end
 
   def destroy
+    employee = Employee.find_by(id: params[:id])
+    if employee.delete
+      render json: { message: "Employee Terminated" }
+    else
+      render json: { errors: employee.errors.full_message }, status: 418
+    end
   end
 end

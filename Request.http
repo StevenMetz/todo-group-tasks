@@ -14,3 +14,16 @@ Content-Type: application/json
   "password_confirmation": "password",
   "image": "/lib/images"
 }
+### UPDATE
+PATCH http://localhost:3000/employees/1 
+Content-Type: application/json 
+
+{
+  "first_name":"Steven",
+  "last_name": "Metz",
+  "email": "steven@test.com",
+  "image": "/lib/images"
+}
+
+### DESTROY
+DELETE http://localhost:3000/employees/1 
