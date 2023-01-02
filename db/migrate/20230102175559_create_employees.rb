@@ -1,6 +1,7 @@
-class CreateNames < ActiveRecord::Migration[7.0]
+class CreateEmployees < ActiveRecord::Migration[7.0]
   def change
-    create_table :names do |t|
+    create_table :employees do |t|
+      t.string :name
       t.string :email
       t.string :password_digest
       t.string :image
