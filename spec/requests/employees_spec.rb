@@ -52,14 +52,14 @@ RSpec.describe "Employees", type: :request do
 
   describe "GET /create" do
     it "should create an employee" do
-      Employee.create!(
-        first_name: "steven",
-        last_name: "metz",
-        email: "test@email.com",
-        password: "password",
-        password_confirmation: "password",
-        image: "image.com",
-      )
+      # Employee.create!(
+      #   first_name: "steven",
+      #   last_name: "metz",
+      #   email: "test@email.com",
+      #   password: "password",
+      #   password_confirmation: "password",
+      #   image: "image.com",
+      # )
       post "/employees"
       expect(response).to have_http_status(:success)
     end
