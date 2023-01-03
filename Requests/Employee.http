@@ -1,5 +1,7 @@
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MTEsImV4cCI6MTY3Mjg2Mzk4M30.AYULdGW3clLcQ_UFRocjKEDbv_WO3hzXVX2WF-1JMY0
 ### INDEX
 GET http://localhost:3000/employees
+Authorization: Bearer {{manager}}
 ### SHOW
 GET http://localhost:3000/employees/11
 ### CREATE
@@ -9,7 +11,7 @@ Content-Type: application/json
 {
   "first_name":"Amanda",
   "last_name": "Amanda",
-  "email": "amanda@test.com",
+  "email": "amanda1@test.com",
   "password":"password",
   "password_confirmation": "password",
   "image": "/lib/images"

@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+  before_action :manager?, except: [:create]
+
   def index
     employees = Employee.all
     render json: employees.as_json
