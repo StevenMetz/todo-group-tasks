@@ -2,7 +2,7 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NCwiZXhwIjoxNjcyODYxNjU0fQ.VXVE6ShP5MdrKfD28NM95nXWI3JrvUA0pZg1pV49arc
 ### INDEX
 GET http://localhost:3000/todos
-Authorization: Bearer {{jwt}}
+Authorization: Bearer {{manager}}
 
 
 

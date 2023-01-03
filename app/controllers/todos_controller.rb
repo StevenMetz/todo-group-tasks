@@ -1,8 +1,12 @@
 class TodosController < ApplicationController
-  before_action :manager?, except: [:index,:update]
+  before_action :manager?, except: [:index, :update]
 
   def index
-    todos = current_employee.todos.all
+    if current_employee.manager == true
+      todos = Todo.all
+    else
+      todos = current_employee.todos.all
+    end
     render json: todos.as_json
   end
 
