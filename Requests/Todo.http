@@ -1,11 +1,9 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjcyODYxNDM3fQ.alIoNu3-At5d6cQFWYdgsuFXE8A4z69o3NE3wj1CBYs
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MTEsImV4cCI6MTY3Mjg2Mzk4M30.AYULdGW3clLcQ_UFRocjKEDbv_WO3hzXVX2WF-1JMY0
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NCwiZXhwIjoxNjcyODYxNjU0fQ.VXVE6ShP5MdrKfD28NM95nXWI3JrvUA0pZg1pV49arc
 ### INDEX
 GET http://localhost:3000/todos
 Authorization: Bearer {{jwt}}
-### SHOW
-GET http://localhost:3000/todo
-Authorization: Bearer {{jwt}}
+
 
 
 ### CREATE
@@ -20,18 +18,20 @@ Authorization: Bearer {{manager}}
   "employee_id": 4
 }
 ### UPDATE
-PATCH  http://localhost:3000/todos/9
+PATCH  http://localhost:3000/todos/10
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
+
 {
-  "name": "Build gable ",
+  "name": "Build  ",
   "description": "Put Strong backs on gableapply backer to bottom of gable make sure gable is straight up and down. staple OSB to gable staple tyvek on  build rake",
   "employee_id":4 ,
   "done": true
 }
 ### DELETE
-DELETE http://localhost:3000/todos/2
+DELETE http://localhost:3000/todos/9
+Authorization: Bearer {{jwt}}
 ### LOGIN
 POST http://localhost:3000/sessions.json 
 Content-Type: application/json

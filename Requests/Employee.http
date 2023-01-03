@@ -1,40 +1,40 @@
 ### INDEX
 GET http://localhost:3000/employees
 ### SHOW
-GET http://localhost:3000/employees/1
+GET http://localhost:3000/employees/11
 ### CREATE
 POST http://localhost:3000/employees 
 Content-Type: application/json 
 
 {
-  "first_name":"Steven",
-  "last_name": "Metz",
-  "email": "steven123444@test.com",
+  "first_name":"Amanda",
+  "last_name": "Amanda",
+  "email": "amanda@test.com",
   "password":"password",
   "password_confirmation": "password",
   "image": "/lib/images"
 }
 ### UPDATE
-PATCH http://localhost:3000/employees/2
+PATCH http://localhost:3000/employees/11
 Content-Type: application/json 
 
 {
-  "first_name":"Steven",
-  "last_name": "Metz",
-  "email": "steven@test.com",
+  "first_name":"Amanda",
+  "last_name": "Amanda",
+  "email": "Amanda@test.com",
   "image": "/lib/images",
   "manager": true
 }
 
 ### DESTROY
-DELETE http://localhost:3000/employees/1 
+DELETE http://localhost:3000/employees/8
 
 ### LOGIN
 POST http://localhost:3000/sessions.json 
 Content-Type: application/json
 
 {
-  "email": "steven12@test.com",
+  "email": "Amanda@test.com",
   "password": "password"
 }
 

@@ -1,16 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "Employees", type: :request do
-  describe "GET /index" do
+  describe "GET /employees" do
     it "should show all employees" do
-      Employee.create!(
-        first_name: "steven",
-        last_name: "metz",
-        email: "test@email.com",
-        password: "password",
-        password_confirmation: "password",
-        image: "image.com",
-      )
       Employee.create!(
         first_name: "steven",
         last_name: "metz",
@@ -33,7 +25,7 @@ RSpec.describe "Employees", type: :request do
     end
   end
 
-  describe "GET /show" do
+  describe "GET /employee" do
     it "returns http success" do
       employee = Employee.create!(
         first_name: "steven",
@@ -50,22 +42,22 @@ RSpec.describe "Employees", type: :request do
     end
   end
 
-  describe "GET /create" do
+  describe "post /employees" do
     it "should create an employee" do
-      # Employee.create!(
-      #   first_name: "steven",
-      #   last_name: "metz",
-      #   email: "test@email.com",
-      #   password: "password",
-      #   password_confirmation: "password",
-      #   image: "image.com",
-      # )
-      post "/employees"
+      post "/employees", params: {
+                           first_name: "steven",
+                           last_name: "metz",
+                           email: "test1234789@email.com",
+                           password: "password",
+                           password_confirmation: "password",
+                           image: "image.com",
+                         }
+
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /update" do
+  describe "PATCH /employees" do
     it "returns http success" do
       employee = Employee.create!(
         first_name: "steven",
@@ -83,12 +75,12 @@ RSpec.describe "Employees", type: :request do
     end
   end
 
-  describe "GET /destroy" do
+  describe "DELETE /employee" do
     it "returns http success" do
       Employee.create!(
         first_name: "steven",
         last_name: "metz",
-        email: "test2@email.com",
+        email: "test22@email.com",
         password: "password",
         password_confirmation: "password",
         image: "image.com",
