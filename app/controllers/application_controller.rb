@@ -17,6 +17,12 @@ class ApplicationController < ActionController::API
     end
   end
 
+  def manager?
+    unless current_employee && current_employee.manager == true
+      render json: {}, status: :unauthorized
+    end
+  end
+
   def authenticate_employee
     unless current_employee
       render json: {}, status: :unauthorized

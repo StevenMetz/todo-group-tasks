@@ -9,7 +9,7 @@ Content-Type: application/json
 {
   "first_name":"Steven",
   "last_name": "Metz",
-  "email": "steven12@test.com",
+  "email": "steven123444@test.com",
   "password":"password",
   "password_confirmation": "password",
   "image": "/lib/images"
@@ -22,7 +22,8 @@ Content-Type: application/json
   "first_name":"Steven",
   "last_name": "Metz",
   "email": "steven@test.com",
-  "image": "/lib/images"
+  "image": "/lib/images",
+  "manager": true
 }
 
 ### DESTROY
@@ -33,7 +34,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "steven@test.com",
+  "email": "steven12@test.com",
   "password": "password"
 }
 

@@ -1,26 +1,42 @@
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjcyODYxNDM3fQ.alIoNu3-At5d6cQFWYdgsuFXE8A4z69o3NE3wj1CBYs
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NCwiZXhwIjoxNjcyODYxNjU0fQ.VXVE6ShP5MdrKfD28NM95nXWI3JrvUA0pZg1pV49arc
 ### INDEX
 GET http://localhost:3000/todos
+Authorization: Bearer {{jwt}}
 ### SHOW
-GET http://localhost:3000/todos/1
+GET http://localhost:3000/todo
+Authorization: Bearer {{jwt}}
+
 
 ### CREATE
 POST http://localhost:3000/todos
 Content-Type: application/json
+Authorization: Bearer {{manager}}
+
 
 {
   "name": "Build gable E1E",
   "description": "Put Strong backs on gable\n apply backer to bottom of gable\n make sure gable is straight up and down.\n staple OSB to gable \n staple tyvek on \n build rake",
-  "employee_id": 1
+  "employee_id": 4
 }
 ### UPDATE
-PATCH  http://localhost:3000/todos/2
+PATCH  http://localhost:3000/todos/9
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-  "name": "Build gable E1E",
+  "name": "Build gable ",
   "description": "Put Strong backs on gableapply backer to bottom of gable make sure gable is straight up and down. staple OSB to gable staple tyvek on  build rake",
-  "employee_id": 1,
-  "done": false
+  "employee_id":4 ,
+  "done": true
 }
 ### DELETE
 DELETE http://localhost:3000/todos/2
+### LOGIN
+POST http://localhost:3000/sessions.json 
+Content-Type: application/json
+
+{
+  "email": "steven@test.com",
+  "password": "password"
+}

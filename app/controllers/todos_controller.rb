@@ -1,11 +1,13 @@
 class TodosController < ApplicationController
+  before_action :manager?, except: [:index,:update]
+
   def index
-    todos = Todo.all
+    todos = current_employee.todos.all
     render json: todos.as_json
   end
 
   def show
-    todo = Todo.find_by(id: params[:id])
+    todo = Todo.find_by(employee_id: params[current_employee.id])
     render json: todo
   end
 
@@ -13,7 +15,6 @@ class TodosController < ApplicationController
     todo = Todo.new(
       name: params[:name],
       description: params[:description],
-      done: params[:done],
       employee_id: params[:employee_id],
     )
     if todo.save
@@ -25,8 +26,10 @@ class TodosController < ApplicationController
 
   def update
     todo = Todo.find_by(id: params[:id])
-    todo.name = params[:name] || todo.name
-    todo.description = params[:description] || todo.description
+    if current_employee.manager == true
+      todo.name = params[:name] || todo.name
+      todo.description = params[:description] || todo.description
+    end
     if todo.done != params[:done]
       todo.toggle!(:done)
     end

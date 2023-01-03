@@ -17,7 +17,6 @@ class EmployeesController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       image: params[:image],
-      manager_id: params[:manager_id],
     )
     if employee.save
       render json: employee.as_json
@@ -32,6 +31,9 @@ class EmployeesController < ApplicationController
     employee.last_name = params[:last_name] || employee.last_name
     employee.email = params[:email] || employee.email
     employee.image = params[:image] || employee.image
+    if employee.manager != params[:manager]
+      employee.toggle!(:manager)
+    end
     if employee.save
       render json: employee.as_json
     else
