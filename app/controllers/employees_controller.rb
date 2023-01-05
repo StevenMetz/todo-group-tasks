@@ -2,13 +2,13 @@ class EmployeesController < ApplicationController
   before_action :manager?, except: [:create]
 
   def index
-    employees = Employee.all
-    render json: employees.as_json
+    @employees = Employee.all
+    render json: @employees
   end
 
   def show
-    employee = Employee.find_by(id: params[:id])
-    render json: employee.as_json
+    @employee = Employee.find_by(id: params[:id])
+    render :show
   end
 
   def create

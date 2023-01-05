@@ -1,0 +1,11 @@
+@employees.map do |employee|
+  {
+    id: employee.id,
+    first_name: employee.first_name,
+    last_name: employee.last_name,
+    image: employee.image,
+    manager: employee.manager,
+    friendly_created_at: employee.friendly_created_at,
+    updated_at: employee.updated_at
+    }
+end

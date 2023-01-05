@@ -11,7 +11,7 @@ class TodosController < ApplicationController
   end
 
   def show
-    todo = Todo.find_by(employee_id: params[current_employee.id])
+    todo = Todo.find_by(id: params[:id])
     render json: todo
   end
 
