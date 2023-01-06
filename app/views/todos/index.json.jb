@@ -1,0 +1,14 @@
+@todos.map do |todo|
+  {
+    id: todo.id,
+    name: todo.name,
+    description: todo.description,
+    employee_id: todo.employee_id,
+    employee_first: todo.employee.first_name,
+    employee_last: todo.employee.last_name,
+    done: todo.done,
+    friendly_created_at: todo.friendly_created_at,
+    friendly_updated_at: todo.friendly_updated_at
+   
+  }
+end

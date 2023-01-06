@@ -1,13 +1,13 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjcyOTcwNTMzfQ.FoCQbFvZUuQzl4PWrEFqrgcVLh37HAkzsF53HBirfu0
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczMTE3MDI2fQ.IezVd0xA7aOBTN-xE5DghBXCEi6LS3sGTFeOiElMuNE
 ### INDEX
-GET http://localhost:3000/employees
+GET http://localhost:3000/employees.json
 Authorization: Bearer {{manager}}
 ### SHOW
-GET http://localhost:3000/employees/11
+GET http://localhost:3000/employees/11.json
 Authorization: Bearer {{manager}}
 
 ### CREATE
-POST http://localhost:3000/employees 
+POST http://localhost:3000/employees.json 
 Content-Type: application/json 
 
 {
@@ -19,19 +19,19 @@ Content-Type: application/json
   "image": "/lib/images"
 }
 ### UPDATE
-PATCH http://localhost:3000/employees/11
+PATCH http://localhost:3000/employees/11.json
 Content-Type: application/json 
 
 {
   "first_name":"Amanda",
-  "last_name": "Amanda",
+  "last_name": "Hale",
   "email": "Amanda@test.com",
   "image": "/lib/images",
   "manager": true
 }
 
 ### DESTROY
-DELETE http://localhost:3000/employees/8
+DELETE http://localhost:3000/employees/8.json
 
 ### LOGIN
 POST http://localhost:3000/sessions.json 

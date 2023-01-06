@@ -3,9 +3,11 @@
     id: employee.id,
     first_name: employee.first_name,
     last_name: employee.last_name,
+    email: employee.email,
     image: employee.image,
+    todos: employee.todos,
     manager: employee.manager,
     friendly_created_at: employee.friendly_created_at,
-    updated_at: employee.updated_at
+    friendly_updated_at: employee.friendly_updated_at
     }
 end

@@ -1,0 +1,10 @@
+{
+  id: @todo.id,
+  name: @todo.name,
+  employee_first: @todo.employee.first_name,
+  employee_last: @todo.employee.last_name,
+  description: @todo.description,
+  friendly_created_at: @todo.friendly_created_at,
+  friendly_updated_at: @todo.friendly_updated_at,
+  done: @todo.done
+}

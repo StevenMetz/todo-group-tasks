@@ -3,16 +3,16 @@ class TodosController < ApplicationController
 
   def index
     if current_employee.manager == true
-      todos = Todo.all
+      @todos = Todo.all
     else
-      todos = current_employee.todos.all
+      @todos = current_employee.todos.all
     end
-    render json: todos.as_json
+    render :index
   end
 
   def show
-    todo = Todo.find_by(id: params[:id])
-    render json: todo
+    @todo = Todo.find_by(id: params[:id])
+    render :show
   end
 
   def create
@@ -29,18 +29,18 @@ class TodosController < ApplicationController
   end
 
   def update
-    todo = Todo.find_by(id: params[:id])
+    @todo = Todo.find_by(id: params[:id])
     if current_employee.manager == true
-      todo.name = params[:name] || todo.name
-      todo.description = params[:description] || todo.description
+      @todo.name = params[:name] || @todo.name
+      @todo.description = params[:description] || @todo.description
     end
-    if todo.done != params[:done]
-      todo.toggle!(:done)
+    if @todo.done != params[:done]
+      @todo.toggle!(:done)
     end
-    if todo.save
-      render json: todo.as_json
+    if @todo.save
+      render :show
     else
-      render json: { errors: todo.errors.full_message }, status: :bad_request
+      render json: { errors: @todo.errors.full_message }, status: :bad_request
     end
   end
 

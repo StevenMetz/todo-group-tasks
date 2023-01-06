@@ -1,11 +1,11 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjcyOTUzODIxfQ.XhCBpQHwQU78dQrR4moFHfPy_0eKNSryso4kYF94YOk
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczMTEyOTc4fQ.iRep18K6eTbjTFxq9613BC97JlQUBynN10X9HwutfXU
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NCwiZXhwIjoxNjcyODYxNjU0fQ.VXVE6ShP5MdrKfD28NM95nXWI3JrvUA0pZg1pV49arc
 ### INDEX
-GET http://localhost:3000/todos
+GET http://localhost:3000/todos.json
 Authorization: Bearer {{manager}}
 
 ### SHOW
-GET http://localhost:3000/todos/4
+GET http://localhost:3000/todos/50.json
 Authorization: Bearer {{manager}}
 
 
@@ -21,7 +21,7 @@ Authorization: Bearer {{manager}}
   "employee_id": 4
 }
 ### UPDATE
-PATCH  http://localhost:3000/todos/4
+PATCH  http://localhost:3000/todos/50.json
 Content-Type: application/json
 Authorization: Bearer {{manager}}
 
