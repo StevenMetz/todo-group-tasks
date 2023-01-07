@@ -6,6 +6,7 @@
     email: employee.email,
     image: employee.image,
     todos: employee.todos,
+    jobsite: employee.jobsites,
     manager: employee.manager,
     time_clock: employee.punchins,
     friendly_created_at: employee.friendly_created_at,

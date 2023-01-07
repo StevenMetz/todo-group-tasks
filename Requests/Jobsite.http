@@ -1,0 +1,28 @@
+### Index
+GET http://localhost:3000/jobsites.json
+
+### SHOW 
+GET http://localhost:3000/jobsites/3.json 
+
+### Create
+Post http://localhost:3000/jobsites.json 
+Content-Type: application/json
+
+{
+  "builder": "Tim O'Brien",
+  "location": "123 Main St, Menomonee Falls",
+   "employee_id": 3
+}
+
+### Update
+PATCH  http://localhost:3000/jobsites/1.json 
+Content-Type: application/json
+
+{
+  "builder": "Tim O'Brien",
+  "location": "1500 Main St, Menomonee Falls",
+   "employee_id": 5
+}
+
+### Destroy
+DELETE  http://localhost:3000/jobsites/2.json 

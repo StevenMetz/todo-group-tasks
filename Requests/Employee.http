@@ -3,7 +3,7 @@
 GET http://localhost:3000/employees.json
 Authorization: Bearer {{manager}}
 ### SHOW
-GET http://localhost:3000/employees/11.json
+GET http://localhost:3000/employees/3.json
 Authorization: Bearer {{manager}}
 
 ### CREATE
