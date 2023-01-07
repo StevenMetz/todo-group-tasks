@@ -6,7 +6,7 @@ class PunchinsController < ApplicationController
 
   def show
     @punchin = Punchin.find_by(id: params[:id])
-    render json: @punchin.as_json
+    render :show
   end
 
   def create
@@ -29,7 +29,7 @@ class PunchinsController < ApplicationController
     @punchin.time_out = params[:time_out] || @punchin.time_out
     @punchin.date = params[:date] || @punchin.date
     if @punchin.save
-      render json: @punchin.as_json
+      render :show
     else
       render json: { errors: @punchin.errors.full_message }, status: :bad_request
     end
