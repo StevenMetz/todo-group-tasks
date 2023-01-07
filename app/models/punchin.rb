@@ -1,0 +1,2 @@
+class Punchin < ApplicationRecord
+end

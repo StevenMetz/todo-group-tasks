@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :punchins
   resources :todos
 
   resources :employees
