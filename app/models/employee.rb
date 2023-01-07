@@ -5,6 +5,7 @@ class Employee < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_many :todos
   has_many :punchins 
+  has_many :jobsites
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
