@@ -1,0 +1,6 @@
+@jobsites.map do |jobsite|
+  {
+    id: jobsite.id,
+    url: jobsite_url(jobsite, format: :json)
+  }
+end

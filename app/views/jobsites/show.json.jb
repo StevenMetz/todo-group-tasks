@@ -1,0 +1,5 @@
+{
+  id: @jobsite.id,
+  created_at: @jobsite.created_at,
+  updated_at: @jobsite.updated_at
+}
