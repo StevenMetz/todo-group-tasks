@@ -4,6 +4,7 @@ class Employee < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
   has_many :todos
+  has_many :punchins 
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")

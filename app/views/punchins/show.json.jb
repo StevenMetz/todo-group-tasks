@@ -1,0 +1,5 @@
+{
+  id: @punchin.id,
+  created_at: @punchin.created_at,
+  updated_at: @punchin.updated_at
+}
