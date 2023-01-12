@@ -1,16 +1,16 @@
 class EmployeesController < ApplicationController
-  # before_action :manager?, except: [:create, :update]
-
+  before_action :manager?, except: [:create, :update]
+ # Shows all employees
   def index
     @employees = Employee.all
     render :index
   end
-
+   # Displays one employee
   def show
     @employee = Employee.find_by(id: params[:id])
     render :show
   end
-
+  # Created Employee
   def create
     employee = Employee.new(
       first_name: params[:first_name],
@@ -27,7 +27,7 @@ class EmployeesController < ApplicationController
       render json: { errors: employee.errors.full_messages }, status: :bad_request
     end
   end
-
+   # Updates just one part of an employees profile
   def update
     @employee = Employee.find_by(id: params[:id])
     @employee.first_name = params[:first_name] || @employee.first_name
@@ -43,7 +43,7 @@ class EmployeesController < ApplicationController
       render json: { errors: @employee.errors.full_message }, status: :bad_request
     end
   end
-
+   # Deletes employee
   def destroy
     employee = Employee.find_by(id: params[:id])
     if employee.delete
@@ -51,11 +51,5 @@ class EmployeesController < ApplicationController
     else
       render json: { errors: employee.errors.full_message }, status: 418
     end
-  end
-
-  private
-
-  def employee_params
-    params.require(:employee).permit(:first_name, :last_name, :email, :image, jobsite_ids: [])
   end
 end

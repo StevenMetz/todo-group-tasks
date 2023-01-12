@@ -1,10 +1,12 @@
 class TodosController < ApplicationController
-  before_action :manager?, except: [:index, :update,:show]
+  before_action :manager?, except: [:index, :update, :show]
 
   def index
+    # only manager can see all todos for all emplooyees
     if current_employee.manager == true
       @todos = Todo.all
     else
+      #employee can see their Task
       @todos = current_employee.todos.all
     end
     render :index
@@ -34,6 +36,7 @@ class TodosController < ApplicationController
       @todo.name = params[:name] || @todo.name
       @todo.description = params[:description] || @todo.description
     end
+    # allows Employee to only change task from being done to undone
     if @todo.done != params[:done]
       @todo.toggle!(:done)
     end

@@ -1,6 +1,6 @@
 class PunchinsController < ApplicationController
   before_action :manager?, except: [:index, :show, :create]
-
+   # all C R U D actions RESTful only manager can edit and delete them
   def index
     @punchins = Punchin.all
     render :index
