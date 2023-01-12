@@ -1,12 +1,18 @@
 class JobsitesController < ApplicationController
+  before_action :manager?, except: [:index]
+
   def index
-    @jobsites = Jobsite.all
-    render json: @jobsites.as_json
+    if current_employee.manager == true
+      @jobsites = Jobsite.all
+    else
+      @jobsites = current_employee.jobsites.all
+    end
+    render :index
   end
 
   def show
     @jobsite = Jobsite.find_by(id: params[:id])
-    render json: @jobsite.as_json
+    render :show
   end
 
   def create
@@ -18,7 +24,7 @@ class JobsitesController < ApplicationController
     if jobsite.save
       render json: jobsite.as_json
     else
-      render json: { errors: jobsite.errors.full_message }, status: :bad_request
+      render json: { errors: jobsite.errors.full_messages }, status: :bad_request
     end
   end
 
@@ -30,7 +36,7 @@ class JobsitesController < ApplicationController
     if @jobsite.save
       render json: @jobsite.as_json
     else
-      render json: { errors: @jobsite.errors.full_message }, status: :bad_request
+      render json: { errors: @jobsite.errors.full_messages }, status: :bad_request
     end
   end
 

@@ -1,4 +1,4 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczMTQzNDIzfQ.1kIr2GdRdK8BWMLm9m6rBOuoGOT5kqkaM3VEj4SKCFk
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczNDAwMjYzfQ.xhmu4zM5JJl3PrmpaH9Ml7eqZ16jzmdHA0jAkywk4eA
 ### Index
 GET http://localhost:3000/punchins.json
 ### Show
@@ -9,11 +9,7 @@ Content-Type: application/json
 Authorization: Bearer {{manager}}
 
 {
-  "time_in": "10:05 am",
-  "time_out": "10:45 pm",
- 
-  "date": "2021-01-19"
-
+  "time_out": "10:45 pm"
 }
 ### Update
 PATCH http://localhost:3000/punchins/1.json

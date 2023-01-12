@@ -1,4 +1,6 @@
 class PunchinsController < ApplicationController
+  before_action :manager?, except: [:index, :show, :create]
+
   def index
     @punchins = Punchin.all
     render :index
@@ -10,10 +12,11 @@ class PunchinsController < ApplicationController
   end
 
   def create
+    @time = Time.current
     @punchin = Punchin.new(
       time_in: params[:time_in],
       time_out: params[:time_out],
-      date: params[:date],
+      date: @time.strftime("%D"),
       employee_id: current_employee.id,
     )
     if @punchin.save

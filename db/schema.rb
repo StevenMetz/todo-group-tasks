@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_07_031121) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_09_003846) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "employee_jobsites", force: :cascade do |t|
+    t.bigint "employee_id", null: false
+    t.bigint "jobsite_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_employee_jobsites_on_employee_id"
+    t.index ["jobsite_id"], name: "index_employee_jobsites_on_jobsite_id"
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string "email"
@@ -51,4 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_07_031121) do
     t.boolean "done", default: false
   end
 
+  add_foreign_key "employee_jobsites", "employees"
+  add_foreign_key "employee_jobsites", "jobsites"
 end

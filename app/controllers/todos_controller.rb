@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :manager?, except: [:index, :update]
+  before_action :manager?, except: [:index, :update,:show]
 
   def index
     if current_employee.manager == true

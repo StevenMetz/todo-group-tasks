@@ -1,4 +1,4 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczMTQzNDIzfQ.1kIr2GdRdK8BWMLm9m6rBOuoGOT5kqkaM3VEj4SKCFk
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczMjg2MjQwfQ.I7XwFcT7wn3iYAYrxpdny67lU-Jzkytj3ixoZ707dLo
 ### INDEX
 GET http://localhost:3000/employees.json
 Authorization: Bearer {{manager}}
@@ -12,21 +12,20 @@ Content-Type: application/json
 
 {
   "first_name":"Amanda",
-  "last_name": "Amanda",
-  "email": "amanda1@test.com",
-  "password":"password",
-  "password_confirmation": "password",
+  "last_name": "hale",
+  "email": "amandahal@test.com",
+  "password":"thispassword",
+  "password_confirmation": "thispassword",
   "image": "/lib/images"
 }
 ### UPDATE
-PATCH http://localhost:3000/employees/11.json
+PATCH http://localhost:3000/employees/20.json
 Content-Type: application/json 
 
 {
   "first_name":"Amanda",
-  "last_name": "Hale",
-  "email": "Amanda@test.com",
-  "image": "/lib/images",
+   "last_name": "Hale",
+   "image": "/lib/images",
   "manager": true
 }
 

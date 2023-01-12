@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :manager?, except: [:create, :update]
+  # before_action :manager?, except: [:create, :update]
 
   def index
     @employees = Employee.all
@@ -20,6 +20,7 @@ class EmployeesController < ApplicationController
       password_confirmation: params[:password_confirmation],
       image: params[:image],
     )
+
     if employee.save
       render json: employee.as_json
     else
@@ -50,5 +51,11 @@ class EmployeesController < ApplicationController
     else
       render json: { errors: employee.errors.full_message }, status: 418
     end
+  end
+
+  private
+
+  def employee_params
+    params.require(:employee).permit(:first_name, :last_name, :email, :image, jobsite_ids: [])
   end
 end

@@ -4,12 +4,16 @@ class Employee < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
   has_many :todos
-  has_many :punchins 
-  has_many :jobsites
+  has_many :punchins
+  # has_many :jobsite_employees
+  # has_many :jobsites, through: :jobsite_employees
+  # has_and_belongs_to_many :jobsites
+  has_and_belongs_to_many :jobsites
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
   end
+
   def friendly_updated_at
     updated_at.strftime("%B %e, %Y")
   end

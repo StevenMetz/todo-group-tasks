@@ -1,28 +1,45 @@
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczMjg1NjYyfQ.5-b4uKgRGtqI5QwRMm3CT0Qhy8UNm8An9gsRG-YWgXM
 ### Index
 GET http://localhost:3000/jobsites.json
+Authorization: Bearer {{manager}}
 
 ### SHOW 
 GET http://localhost:3000/jobsites/3.json 
+Authorization: Bearer {{manager}}
 
 ### Create
 Post http://localhost:3000/jobsites.json 
 Content-Type: application/json
+Authorization: Bearer {{manager}}
 
 {
-  "builder": "Tim O'Brien",
+  "builder": "Espire",
   "location": "123 Main St, Menomonee Falls",
-   "employee_id": 3
+   "employee_id": 6
 }
 
 ### Update
-PATCH  http://localhost:3000/jobsites/1.json 
+PATCH  http://localhost:3000/jobsites/6.json 
 Content-Type: application/json
+Authorization: Bearer {{manager}}
+
 
 {
   "builder": "Tim O'Brien",
   "location": "1500 Main St, Menomonee Falls",
-   "employee_id": 5
+   "employee_id": 6,
+   ""
 }
 
 ### Destroy
 DELETE  http://localhost:3000/jobsites/2.json 
+Authorization: Bearer {{manager}}
+
+### LOGIN
+POST http://localhost:3000/sessions.json 
+Content-Type: application/json
+
+{
+  "email": "steven@test.com",
+  "password":"password"
+}

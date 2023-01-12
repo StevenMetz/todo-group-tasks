@@ -1,6 +1,11 @@
 class Punchin < ApplicationRecord
   belongs_to :employee
 
+  def time_clock
+    punchins.punch_in
+    punchins.punch_out
+  end
+
   def punch_in
     time_in.strftime("%D %r")
   end
