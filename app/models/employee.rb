@@ -6,9 +6,9 @@ class Employee < ApplicationRecord
   has_many :todos
   has_many :punchins
   # has_many :jobsite_employees
-  # has_many :jobsites, through: :jobsite_employees
+  has_many :employee_jobsites
+  has_many :jobsites, through: :employee_jobsites
   # has_and_belongs_to_many :jobsites
-  has_and_belongs_to_many :jobsites
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")

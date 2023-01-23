@@ -1,4 +1,4 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjczMTEyOTc4fQ.iRep18K6eTbjTFxq9613BC97JlQUBynN10X9HwutfXU
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MSwiZXhwIjoxNjc0NTA0NjA3fQ.9csf_keF7mnaE0xaCUROv2fkR5C8AEV-UJTas3dwgAc
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NCwiZXhwIjoxNjcyODYxNjU0fQ.VXVE6ShP5MdrKfD28NM95nXWI3JrvUA0pZg1pV49arc
 ### INDEX
 GET http://localhost:3000/todos.json
@@ -21,12 +21,12 @@ Authorization: Bearer {{manager}}
   "employee_id": 4
 }
 ### UPDATE
-PATCH  http://localhost:3000/todos/50.json
+PATCH  http://localhost:3000/todos/1.json
 Content-Type: application/json
 Authorization: Bearer {{manager}}
 
 {
-  "name": "do it again ",
+  "name": "do i ",
   "description": "Put Strong backs on gableapply backer to bottom of gable make sure gable is straight up and down. staple OSB to gable staple tyvek on  build rake",
   "employee_id":4 ,
   "done": true
@@ -39,6 +39,6 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "steven@test.com",
+  "email": "joe@example.com",
   "password": "password"
 }
