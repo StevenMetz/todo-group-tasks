@@ -3,7 +3,7 @@
     id: jobsite.id,
     location: jobsite.location,
     builder: jobsite.builder,
-    employees: jobsite.employees,
+    employees: {First Name: jobsite.employees.first_name, Last Name: jobsite.employees.last_name},
     friendly_created_at: jobsite.friendly_created_at,
     friendly_updated_at: jobsite.friendly_updated_at
   
