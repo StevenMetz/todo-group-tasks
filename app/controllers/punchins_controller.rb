@@ -1,6 +1,6 @@
 class PunchinsController < ApplicationController
   before_action :manager?, except: [:index, :show, :create]
-   # all C R U D actions RESTful only manager can edit and delete them
+  # all C R U D actions RESTful only manager can edit and delete them
   def index
     @punchins = Punchin.all
     render :index
@@ -14,7 +14,7 @@ class PunchinsController < ApplicationController
   def create
     @time = Time.current
     @punchin = Punchin.new(
-      time_in: params[:time_in],
+      time_in: @time,
       time_out: params[:time_out],
       date: @time.strftime("%D"),
       employee_id: current_employee.id,
@@ -32,7 +32,7 @@ class PunchinsController < ApplicationController
     @punchin.time_out = params[:time_out] || @punchin.time_out
     @punchin.date = params[:date] || @punchin.date
     if @punchin.save
-      render :show
+      render json: @punchin.as_json
     else
       render json: { errors: @punchin.errors.full_message }, status: :bad_request
     end
