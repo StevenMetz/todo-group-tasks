@@ -1,6 +1,4 @@
 class Jobsite < ApplicationRecord
-  # has_many :jobsite_employees
-  # has_many :employees, :through => :jobsite_employees
   has_many :employee_jobsites
   has_many :employees, through: :employee_jobsites
 

@@ -1,5 +1,8 @@
 {
   id: @jobsite.id,
+  location: @jobsite.location,
+  builder: @jobsite.builder,
+  employees: @jobsite.employees,
   created_at: @jobsite.created_at,
   updated_at: @jobsite.updated_at
 }

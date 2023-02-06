@@ -1,4 +1,4 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MSwiZXhwIjoxNjc0NTA0NjA3fQ.9csf_keF7mnaE0xaCUROv2fkR5C8AEV-UJTas3dwgAc
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjc1MDk2MDE2fQ.EufRqCYyuO6eDAcBCfI2fQAN66y0K4RO84R9k7laXBg
 ### INDEX
 GET http://localhost:3000/employees.json
 Authorization: Bearer {{manager}}
@@ -37,7 +37,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "steven@test.com",
+  "email": "steve@example.com",
   "password": "password"
 }
 
