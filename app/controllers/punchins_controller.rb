@@ -1,6 +1,6 @@
 class PunchinsController < ApplicationController
   before_action :manager?, except: [:index, :show, :create]
-   # all C R U D actions RESTful only manager can edit and delete them
+  # all C R U D actions RESTful only manager can edit and delete them
   def index
     @punchins = Punchin.all
     render :index
@@ -32,7 +32,7 @@ class PunchinsController < ApplicationController
     @punchin.time_out = params[:time_out] || @punchin.time_out
     @punchin.date = params[:date] || @punchin.date
     if @punchin.save
-      render :show
+      render json: @punchin.as_json
     else
       render json: { errors: @punchin.errors.full_message }, status: :bad_request
     end
