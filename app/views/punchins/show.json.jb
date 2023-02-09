@@ -1,7 +1,7 @@
 {
   id: @punchin.id,
-    punch_in: @punchin.punch_in,
-    punch_out: @punchin.punch_out,
+    punch_in: @punchin.time_in,
+    punch_out: @punchin.time_out,
     date: @punchin.date,
     first_name: @punchin.employee.first_name,
     last_name: @punchin.employee.last_name

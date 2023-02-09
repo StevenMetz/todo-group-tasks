@@ -1,8 +1,10 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MSwiZXhwIjoxNjc1Nzg3MDg3fQ.z7LwoOurgXbkbVHkky19FtYLGQ1REpkSdiAOl0dy4UE
+
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MSwiZXhwIjoxNjc1ODkyMTIyfQ.iAYLxtWyzLL_dxhnr1XjxHFihkNF82aEN0zabdc6c4E
+
 ### Index
 GET http://localhost:3000/punchins.json
 ### Show
-GET http://localhost:3000/punchins/1.json
+GET http://localhost:3000/punchins/12.json
 ###
 POST  http://localhost:3000/punchins.json
 Content-Type: application/json
