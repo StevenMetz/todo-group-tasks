@@ -4,5 +4,5 @@
     punch_out: @punchin.time_out,
     date: @punchin.date,
     first_name: @punchin.employee.first_name,
-    last_name: @punchin.employee.last_name,
+    last_name: @punchin.employee.last_name
 }

@@ -1,9 +1,9 @@
-@jobsites.map do |jobsite|
+json = @jobsites.map do |jobsite|
   {
     id: jobsite.id,
     location: jobsite.location,
     builder: jobsite.builder,
-    employees: {First Name: jobsite.employees.first_name, Last Name: jobsite.employees.last_name},
+    employees: jobsite.employees.map {|employee| {first_name: employee.first_name, last_name: employee.last_name }}, 
     friendly_created_at: jobsite.friendly_created_at,
     friendly_updated_at: jobsite.friendly_updated_at
   
