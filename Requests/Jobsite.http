@@ -1,4 +1,4 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MSwiZXhwIjoxNjc1NTI1MjE5fQ.vKNSCgiGssFQzX-nK0ITXZ0YXUbxEVqNJLRr7APn01U
+@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MSwiZXhwIjoxNjc1Nzg3MDg3fQ.z7LwoOurgXbkbVHkky19FtYLGQ1REpkSdiAOl0dy4UE
 ### Index
 GET http://localhost:3000/jobsites.json
 Authorization: Bearer {{manager}}

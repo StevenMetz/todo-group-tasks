@@ -14,7 +14,7 @@ class PunchinsController < ApplicationController
   def create
     @time = Time.current
     @punchin = Punchin.new(
-      time_in: params[:time_in],
+      time_in: @time,
       time_out: params[:time_out],
       date: @time.strftime("%D"),
       employee_id: current_employee.id,
