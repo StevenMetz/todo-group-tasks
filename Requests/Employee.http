@@ -1,4 +1,4 @@
-@manager = eyJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6MiwiZXhwIjoxNjc1MDk2MDE2fQ.EufRqCYyuO6eDAcBCfI2fQAN66y0K4RO84R9k7laXBg
+@manager =
 ### INDEX
 GET http://localhost:3000/employees.json
 Authorization: Bearer {{manager}}
