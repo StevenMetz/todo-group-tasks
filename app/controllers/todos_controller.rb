@@ -35,6 +35,7 @@ class TodosController < ApplicationController
     if current_employee.manager == true
       @todo.name = params[:name] || @todo.name
       @todo.description = params[:description] || @todo.description
+      @todo.employee_id = params[:employee_id] || @todo.employee_id
     end
     # allows Employee to only change task from being done to undone
     if @todo.done != params[:done]
