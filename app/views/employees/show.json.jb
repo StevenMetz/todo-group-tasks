@@ -3,6 +3,10 @@
   first_name: @employee.first_name,
   last_name: @employee.last_name,
   email: @employee.email,
+  address: @employee.address,
+  city: @employee.city,
+  state: @employee.state,
+  zip_code: @employee.zip_code,
   manager: @employee.manager,
   created_at: @employee.created_at,
   updated_at: @employee.updated_at
