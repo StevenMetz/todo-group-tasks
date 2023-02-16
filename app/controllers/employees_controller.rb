@@ -36,11 +36,16 @@ class EmployeesController < ApplicationController
     @employee.first_name = params[:first_name] || @employee.first_name
     @employee.last_name = params[:last_name] || @employee.last_name
     @employee.email = params[:email] || @employee.email
-    @employee.image = params[:image] || @employee.image
+    @employee.state = params[:state] || @employee.state
+    @employee.city = params[:city] || @employee.city
+    @employee.address = params[:address] || @employee.address
+    @employee.zip_code = params[:zip_code] || @employee.zip_code
     if @employee.password != params[:password]
       @employee.password = params[:password]
     end
-    if params[:manager] != nil && @employee.manager != params[:manager]
+    if params[:manager] != nil && params[:manager] == "true" && params[:manager] != "Select role" && @employee.manager != true
+      @employee.toggle!(:manager)
+    elsif params[:manager] != nil && params[:manager] != "true" && params[:manager] != "Select role" && @employee.manager == true
       @employee.toggle!(:manager)
     end
     if @employee.save
