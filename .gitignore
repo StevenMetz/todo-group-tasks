@@ -30,3 +30,5 @@
 
 #Ignore Requests File
 /Requests/
+# Ignore Cloudinary
+/config/cloudinary.rb
