@@ -20,7 +20,6 @@ class EmployeesController < ApplicationController
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
-      image: ,
     )
 
     if employee.save
