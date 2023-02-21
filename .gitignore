@@ -32,3 +32,5 @@
 /Requests/
 # Ignore Cloudinary
 /config/cloudinary.rb
+# Ignore the secrets
+/config/secrets.yml

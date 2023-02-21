@@ -5,6 +5,7 @@ class Employee < ApplicationRecord
   has_many :punchins
   has_many :employee_jobsites
   has_many :jobsites, through: :employee_jobsites
+  has_one_attached :image
 
   def friendly_created_at
     created_at.strftime("%B %e, %Y")

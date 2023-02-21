@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  Rails.logger.info "Secret key base: #{Rails.application.credentials.dig(:secret_key_base)}"
+
   def create
     employee = Employee.find_by(email: params[:email])
     if employee && employee.authenticate(params[:password])
