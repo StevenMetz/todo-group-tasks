@@ -30,3 +30,7 @@
 
 #Ignore Requests File
 /Requests/
+# Ignore Cloudinary
+/config/cloudinary.rb
+# Ignore the secrets
+/config/secrets.yml

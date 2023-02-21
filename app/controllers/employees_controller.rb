@@ -1,5 +1,7 @@
 class EmployeesController < ApplicationController
+  skip_forgery_protection
   before_action :manager?, except: [:create, :update]
+  include ActiveStorage::SetCurrent
   # Shows all employees
   def index
     @employees = Employee.all
@@ -39,6 +41,7 @@ class EmployeesController < ApplicationController
     @employee.state = params[:state] || @employee.state
     @employee.city = params[:city] || @employee.city
     @employee.address = params[:address] || @employee.address
+    @employee.image.attach(params[:image]) if params[:image]
     @employee.zip_code = params[:zip_code] || @employee.zip_code
     if @employee.password != params[:password]
       @employee.password = params[:password]
@@ -49,9 +52,9 @@ class EmployeesController < ApplicationController
       @employee.toggle!(:manager)
     end
     if @employee.save
-      render :show
+      render json: @employee
     else
-      render json: { errors: @employee.errors.full_message }, status: :bad_request
+      render json: { errors: @employee.errors.full_messages }, status: :bad_request
     end
   end
 
@@ -63,5 +66,10 @@ class EmployeesController < ApplicationController
     else
       render json: { errors: employee.errors.full_message }, status: 418
     end
+  end
+
+  private
+
+  def employee_params
   end
 end
