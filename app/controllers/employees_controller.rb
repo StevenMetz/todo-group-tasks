@@ -1,5 +1,4 @@
 class EmployeesController < ApplicationController
-  skip_forgery_protection
   before_action :manager?, except: [:create, :update]
   include ActiveStorage::SetCurrent
   # Shows all employees
