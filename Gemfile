@@ -49,4 +49,4 @@ end
 gem 'jwt'
 gem 'jb'
 gem "cloudinary"
-gem 'active_model_serializers'
+gem 'twilio-ruby','~>5.74.5'
